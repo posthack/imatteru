@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div :class="{ app: true, loaded: !isLoading }">
     <the-header />
     <section-atm />
     <section-about />
@@ -24,15 +24,49 @@ export default {
     SectionExperience,
     SectionContact,
   },
+  data() {
+    return {
+      isLoading: true,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1000);
+  },
 };
 </script>
 
 <style lang="scss">
+@import "@scss/vars.scss";
 body {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, Roboto, sans-serif;
-  background-color: #0a192f;
+  font-family: $font-sans;
+  background-color: $main-bg;
   color: #8892b0;
   overflow-x: hidden;
+  ::selection {
+    background-color: lighten($main-bg, 5%);
+  }
+}
+.app {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: darken($main-bg, 4%);
+    opacity: 1;
+    transition: all 0.5s linear;
+  }
+  &.loaded::after {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 </style>

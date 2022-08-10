@@ -9,11 +9,17 @@
             :key="idx"
             :href="`#${el.toLocaleLowerCase()}`"
             :data-counter="`0${++idx}.`"
-            class="header-nav__item"
+            class="header-nav__item anim-fade-down"
+            :style="`transition-delay: ${++idx * 150}ms`"
             >{{ el }}</a
           >
         </nav>
-        <a href="#" class="header__resume">Resume</a>
+        <a
+          href="#"
+          class="header__resume anim-fade-down"
+          :style="`transition-delay: ${(links.length + 2) * 150}ms`"
+          >Resume</a
+        >
       </div>
     </div>
   </header>
@@ -31,7 +37,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@scss/vars.scss";
 .header {
   position: absolute;
   left: 0;
@@ -41,6 +46,7 @@ export default {
   display: flex;
   align-items: center;
   font-size: 14px;
+  font-family: $font-mono;
 }
 .container {
   display: flex;
@@ -49,7 +55,7 @@ export default {
   width: 100%;
   margin: 0 auto;
   padding: 0 50px;
-  max-width: 1100px;
+  max-width: 100%;
 }
 .header-nav {
   display: flex;
@@ -59,9 +65,8 @@ export default {
   align-items: center;
 }
 .header-nav__item {
-  color: $main-text-color;
+  color: $main-text;
   padding: 10px;
-  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
   &:hover {
     color: $light-blue;
   }
@@ -77,5 +82,9 @@ export default {
   color: $light-blue;
   border: 1px solid $light-blue;
   border-radius: 4px;
+  transition: 120ms ease-in-out;
+  &:hover {
+    background-color: rgba($light-blue, 0.1);
+  }
 }
 </style>

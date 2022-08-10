@@ -1,0 +1,29 @@
+.anim-fade-down {
+  transform: translate(0, -30px);
+  opacity: 0;
+  transition-duration: 0.2s;
+}
+.loaded .anim-fade-down {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.anim-fade-up {
+  transform: translate(0, 30px);
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.loaded .anim-fade-up {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.anim-fade-right {
+  transform: translate(40px, 0);
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.loaded .anim-fade-right {
+  transform: translate(0, 0);
+  opacity: 1;
+}
