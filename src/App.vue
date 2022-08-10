@@ -5,6 +5,7 @@
     <section-about />
     <section-experience />
     <section-contact />
+    <the-footer />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import SectionAtm from "@/components/SectionAtm.vue";
 import SectionAbout from "./components/SectionAbout.vue";
 import SectionExperience from "./components/SectionExperience.vue";
 import SectionContact from "./components/SectionContact.vue";
+import TheFooter from "./components/TheFooter.vue";
 
 export default {
   name: "App",
@@ -23,6 +25,7 @@ export default {
     SectionAbout,
     SectionExperience,
     SectionContact,
+    TheFooter,
   },
   data() {
     return {

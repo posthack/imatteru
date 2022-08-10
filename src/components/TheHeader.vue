@@ -3,23 +3,27 @@
     <div class="container">
       <a href="#">logo</a>
       <div class="header__right">
-        <nav class="header-nav">
-          <a
+        <ul class="header-nav">
+          <li
             v-for="(el, idx) in links"
             :key="idx"
-            :href="`#${el.toLocaleLowerCase()}`"
-            :data-counter="`0${++idx}.`"
-            class="header-nav__item anim-fade-down"
-            :style="`transition-delay: ${++idx * 150}ms`"
-            >{{ el }}</a
+            class="anim-fade-down"
+            :style="`transition-delay: ${(idx + 1) * 150}ms`"
           >
-        </nav>
-        <a
-          href="#"
+            <a
+              class="header-nav__item"
+              :data-counter="`0${idx + 1}.`"
+              :href="`#${el.toLocaleLowerCase()}`"
+              >{{ el }}</a
+            >
+          </li>
+        </ul>
+        <div
           class="header__resume anim-fade-down"
           :style="`transition-delay: ${(links.length + 2) * 150}ms`"
-          >Resume</a
         >
+          <a :href="resume.link" target="_blank">{{ resume.title }}</a>
+        </div>
       </div>
     </div>
   </header>
@@ -30,7 +34,11 @@ export default {
   name: "TheHeader",
   data() {
     return {
-      links: ["About", "Experience", "Projects", "Contact"],
+      links: ["Обо мне", "Мой опыт", "Проекты", "Контакты"],
+      resume: {
+        title: "Резюме",
+        link: "#",
+      },
     };
   },
 };
@@ -74,16 +82,22 @@ export default {
     margin-right: 5px;
     color: $light-blue;
   }
+  a {
+    display: block;
+  }
 }
 .header__resume {
-  padding: 12px 16px;
   margin-left: 15px;
-  color: $light-blue;
-  border: 1px solid $light-blue;
-  border-radius: 4px;
-  transition: 120ms ease-in-out;
-  &:hover {
-    background-color: rgba($light-blue, 0.1);
+  a {
+    display: block;
+    padding: 12px 16px;
+    color: $light-blue;
+    border: 1px solid $light-blue;
+    border-radius: 4px;
+    transition: 120ms ease-in-out;
+    &:hover {
+      background-color: rgba($light-blue, 0.1);
+    }
   }
 }
 </style>

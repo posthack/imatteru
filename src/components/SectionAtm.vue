@@ -42,9 +42,9 @@ export default {
   data() {
     return {
       sectionContent: {
-        subtitle: "Hi, my name is",
-        firstTitle: "Viktor Abakumov.",
-        secondTitle: "I build things for the web.",
+        subtitle: "Привет, меня зовут",
+        firstTitle: "Абакумов Виктор.",
+        secondTitle: "Я делаю фронт для сайтов.",
         desc: "I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at <a href='#'>Upstatement</a>.",
         button: {
           text: "Hire me!",
