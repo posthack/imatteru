@@ -45,9 +45,9 @@ export default {
         subtitle: "Привет, меня зовут",
         firstTitle: "Абакумов Виктор.",
         secondTitle: "Я делаю фронт для сайтов.",
-        desc: "I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at <a href='#'>Upstatement</a>.",
+        desc: "Frontend разработчик с 12-летним стажем. Последние 3 года занимаюсь корпоративной разработкой проектов на <a href='#'>VueJS</a>. В настоящее время нахожусь в поиске новой работы.",
         button: {
-          text: "Hire me!",
+          text: "Найми меня",
           link: "#",
         },
       },
