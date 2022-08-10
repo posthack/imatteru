@@ -53,7 +53,6 @@ export default {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
   padding: 0 50px;
   max-width: 100%;
 }

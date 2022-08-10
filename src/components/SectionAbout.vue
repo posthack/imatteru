@@ -1,7 +1,7 @@
 <template>
   <section class="about">
     <div class="container">
-      <div class="numeric-title" data-number="01.">About Me</div>
+      <numbered-title :number="1" :title="`About Me`" />
       <div class="about-flex">
         <div class="about__text">
           <p>
@@ -25,7 +25,11 @@
           </p>
           <p>Here are a few technologies I’ve been working with recently:</p>
           <ul class="about__list">
-            <li v-for="(el, idx) in sectionContent.skills" :key="idx">
+            <li
+              v-for="(el, idx) in sectionContent.skills"
+              :key="idx"
+              class="about__list-el"
+            >
               {{ el }}
             </li>
           </ul>
@@ -37,8 +41,11 @@
 </template>
 
 <script>
+import NumberedTitle from "./NumberedTitle.vue";
+
 export default {
   name: "SectionAbout",
+  components: { NumberedTitle },
   data() {
     return {
       sectionContent: {
@@ -56,4 +63,49 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+.about {
+  margin: 100px 0;
+}
+.container {
+  max-width: 900px;
+}
+.about__text {
+  font-size: 16px;
+  color: $main-text-dark;
+  line-height: 1.5;
+  p:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+.about-flex {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 50px;
+}
+.about__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 0px 10px;
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+  list-style: none;
+}
+.about__list-el {
+  font-size: 14px;
+  font-family: $font-mono;
+  font-weight: 400;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  &::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: calc(50% + 1px);
+    transform: translateY(-50%);
+    color: $light-blue;
+  }
+}
+</style>

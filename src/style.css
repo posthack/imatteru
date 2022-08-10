@@ -135,3 +135,7 @@ a {
 *::after {
   box-sizing: border-box;
 }
+
+.container {
+  margin: 0 auto;
+}
