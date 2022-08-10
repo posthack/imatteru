@@ -34,4 +34,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.atm {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  max-width: 1000px;
+}
+</style>
