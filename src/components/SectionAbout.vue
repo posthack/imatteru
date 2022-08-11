@@ -19,7 +19,8 @@
             Upstatement for a variety of clients.
           </p>
           <p>
-            I also recently <a href="#">launched a course</a> that covers
+            I also recently
+            <a href="#" class="text-link">launched a course</a> that covers
             everything you need to build a web app with the Spotify API using
             Node & React.
           </p>
@@ -34,7 +35,16 @@
             </li>
           </ul>
         </div>
-        <div class="about__photo">photo over here</div>
+        <div class="about__right">
+          <div class="about__photo-wrapper">
+            <div
+              class="about__photo"
+              style="
+                background-image: url('https://avatars.githubusercontent.com/u/2180116?v=4');
+              "
+            ></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -107,5 +117,41 @@ export default {
     transform: translateY(-50%);
     color: $light-blue;
   }
+}
+
+.about__photo-wrapper {
+  position: relative;
+  width: 300px;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 20px;
+    left: 20px;
+    border: 2px solid $light-blue;
+    border-radius: 4px;
+    transition: 0.2s ease-in-out;
+  }
+  &:hover {
+    .about__photo {
+      filter: grayscale(0);
+    }
+    &::after {
+      left: 10px;
+      top: 10px;
+    }
+  }
+}
+.about__photo {
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  filter: grayscale(100%);
+  transition: 0.2s ease-in-out;
 }
 </style>

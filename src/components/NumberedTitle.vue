@@ -26,6 +26,7 @@ export default {
   font-size: 28px;
   color: $main-text;
   font-weight: 600;
+  position: relative;
   &::before {
     content: attr(data-number);
     font-family: $font-mono;
@@ -33,6 +34,16 @@ export default {
     color: $light-blue;
     font-size: 24px;
     font-weight: 400;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 200px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 160px;
+    height: 1px;
+    background-color: $main-text;
   }
 }
 </style>

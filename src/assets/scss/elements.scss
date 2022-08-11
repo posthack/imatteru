@@ -1,0 +1,29 @@
+a.text-link {
+  color: $light-blue;
+  display: inline-block;
+  position: relative;
+  &::before {
+    content: "";
+    transition: width 0.2s ease-in-out;
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: $light-blue;
+  }
+  &::after {
+    content: "";
+    transition: width 0.2s ease-in-out;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: $light-blue;
+  }
+  &:hover::after,
+  &:hover::before {
+    width: 50%;
+  }
+}
