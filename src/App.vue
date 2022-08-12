@@ -4,6 +4,7 @@
     <section-atm />
     <section-about />
     <section-experience />
+    <section-projects />
     <section-contact />
     <the-footer />
   </div>
@@ -14,6 +15,7 @@ import TheHeader from "@/components/TheHeader.vue";
 import SectionAtm from "@/components/SectionAtm.vue";
 import SectionAbout from "./components/SectionAbout.vue";
 import SectionExperience from "./components/SectionExperience.vue";
+import SectionProjects from "./components/SectionProjects.vue";
 import SectionContact from "./components/SectionContact.vue";
 import TheFooter from "./components/TheFooter.vue";
 
@@ -24,6 +26,7 @@ export default {
     SectionAtm,
     SectionAbout,
     SectionExperience,
+    SectionProjects,
     SectionContact,
     TheFooter,
   },
@@ -41,7 +44,24 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@scss/vars.scss";
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba($main-text, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 body {
   font-family: $font-sans;
   background-color: $main-bg;

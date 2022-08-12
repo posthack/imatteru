@@ -1,21 +1,39 @@
 <template>
   <section class="experience">
     <div class="container">
-      <div class="numeric-title" data-number="02.">
-        {{ sectionContent.title }}
-      </div>
+      <numbered-title :number="2" :title="sectionContent.title" />
       <div class="experience__wrapper">
         <div class="experience__tabs">
           <button
             v-for="el in sectionContent.companies"
             :key="el.id"
-            class="experience__tabs-item"
+            :class="{
+              'experience__tabs-item': true,
+              _active: el.id === activeTab,
+            }"
+            @click="activeTab = el.id"
           >
             {{ el.name }}
           </button>
         </div>
         <div class="experience__content">
-          <div class="experience__content-item"></div>
+          <div class="experience__content-title">
+            <a href="#" class="text-link">{{
+              sectionContent.companies[activeTab].name
+            }}</a>
+          </div>
+          <div class="experience__content-date">
+            {{ sectionContent.companies[activeTab].date }}
+          </div>
+          <ul class="experience__content-list">
+            <li
+              v-for="(el, idx) in sectionContent.companies[activeTab]
+                .responsibilities"
+              :key="idx"
+            >
+              {{ el }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -23,18 +41,24 @@
 </template>
 
 <script>
+import NumberedTitle from "./NumberedTitle.vue";
+
 export default {
   name: "SectionExperience",
+  components: {
+    NumberedTitle,
+  },
   data() {
     return {
+      activeTab: 0,
       sectionContent: {
-        title: "Where I’ve worked",
+        title: "Где я работал",
         companies: [
           {
             id: 0,
             isSelected: true,
-            name: "Upstatement",
-            date: "2019 - Present",
+            name: "Bastion Tech",
+            date: "Март - Август 2022",
             responsibilities: [
               "Write modern, performant, maintainable code for a diverse array of client and internal projects",
               "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify",
@@ -85,4 +109,76 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.experience {
+  padding: 100px 0;
+}
+.container {
+  max-width: 700px;
+}
+.experience__wrapper {
+  display: flex;
+}
+.experience__tabs {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+}
+.experience__tabs-item {
+  width: 100%;
+  height: 40px;
+  padding: 0 20px 2px 20px;
+  border: 0;
+  border-left: 2px solid rgba($main-text-dark, 0.3);
+  appearance: none;
+  background-color: transparent;
+  font-family: $font-mono;
+  color: $main-text-dark;
+  border-radius: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  &:hover {
+    background-color: $main-bg-light;
+  }
+  &._active {
+    color: $light-blue;
+    border-left-color: $light-blue;
+  }
+}
+.experience__content {
+  width: 100%;
+  margin-left: 20px;
+}
+.experience__content-title {
+  font-size: 18px;
+  line-height: 1.3;
+  padding-bottom: 8px;
+  font-family: $font-sans-calibri;
+}
+.experience__content-date {
+  font-family: $font-mono;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+.experience__content-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: calc(50% + 1px);
+      transform: translateY(-50%);
+      color: $light-blue;
+    }
+  }
+}
+</style>

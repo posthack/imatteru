@@ -75,7 +75,7 @@ export default {
 
 <style scoped lang="scss">
 .about {
-  margin: 100px 0;
+  padding: 100px 0;
 }
 .container {
   max-width: 900px;

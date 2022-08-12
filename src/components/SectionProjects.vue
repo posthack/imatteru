@@ -1,7 +1,7 @@
 <template>
   <section class="projects">
     <div class="container">
-      <div class="numeric-title" data-number="01.">Some Things I've Built</div>
+      <numbered-title :number="3" :title="title" />
       <div class="projects-list">
         <single-project
           v-for="(el, idx) in projects"
@@ -17,13 +17,15 @@
 </template>
 
 <script>
+import NumberedTitle from "./NumberedTitle.vue";
 import SingleProject from "./SingleProject.vue";
 
 export default {
   name: "SectionProjects",
-  components: { SingleProject },
+  components: { SingleProject, NumberedTitle },
   data() {
     return {
+      title: "Несколько моих проектов",
       projects: [
         {
           label: "Featured Project",
@@ -85,4 +87,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.projects {
+  padding: 100px 0;
+}
+.container {
+  max-width: 1000px;
+}
+</style>
