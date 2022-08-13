@@ -31,7 +31,7 @@ export default {
           label: "Featured Project",
           title: "Halcyon Theme",
           description:
-            "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
+            "A minimal, dark blue theme for <a href='#' class='text-link'>VS Code</a>, Sublime Text, <a href='#' class='text-link'>Atom</a>, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
           tags: ["VS Code", "Sublime Text", "Atom", "iTerm2", "Hyper"],
           links: [
             {
@@ -43,7 +43,7 @@ export default {
               icon: "fab fa-external-link",
             },
           ],
-          screenshot: "https://picsum.photos/200/300/?random",
+          screenshot: "single-project.png",
         },
         {
           label: "Featured Project",
@@ -61,7 +61,7 @@ export default {
               icon: "fab fa-external-link",
             },
           ],
-          screenshot: "https://picsum.photos/200/300/?random",
+          screenshot: "single-project.png",
         },
         {
           label: "Featured Project",
@@ -79,7 +79,7 @@ export default {
               icon: "fab fa-external-link",
             },
           ],
-          screenshot: "https://picsum.photos/200/300/?random",
+          screenshot: "single-project.png",
         },
       ],
     };

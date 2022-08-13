@@ -57,7 +57,7 @@ export default {
           {
             id: 0,
             isSelected: true,
-            name: "Bastion Tech",
+            name: "Bastion tech",
             date: "Март - Август 2022",
             responsibilities: [
               "Write modern, performant, maintainable code for a diverse array of client and internal projects",
@@ -69,7 +69,7 @@ export default {
           {
             id: 1,
             isSelected: false,
-            name: "Scout",
+            name: "Algoritmika",
             date: "January - April 2018",
             responsibilities: [
               "Worked with a team of three designers to build a marketing website and e-commerce platform for blistabloc, an ambitious startup originating from Northeastern",
@@ -81,7 +81,7 @@ export default {
           {
             id: 2,
             isSelected: false,
-            name: "Apple",
+            name: "Nitka Technologies",
             date: "January - April 2018",
             responsibilities: [
               "Worked with a team of three designers to build a marketing website and e-commerce platform for blistabloc, an ambitious startup originating from Northeastern",
@@ -93,7 +93,7 @@ export default {
           {
             id: 3,
             isSelected: false,
-            name: "Scout",
+            name: "Freelance",
             date: "January - April 2018",
             responsibilities: [
               "Worked with a team of three designers to build a marketing website and e-commerce platform for blistabloc, an ambitious startup originating from Northeastern",
@@ -137,6 +137,7 @@ export default {
   border-radius: 0;
   white-space: nowrap;
   cursor: pointer;
+  text-align: left;
   &:hover {
     background-color: $main-bg-light;
   }
