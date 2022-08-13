@@ -13,8 +13,8 @@
             <a
               class="header-nav__item"
               :data-counter="`0${idx + 1}.`"
-              :href="`#${el.toLocaleLowerCase()}`"
-              >{{ el }}</a
+              :href="`#${el.link}`"
+              >{{ el.title }}</a
             >
           </li>
         </ul>
@@ -34,7 +34,24 @@ export default {
   name: "TheHeader",
   data() {
     return {
-      links: ["Обо мне", "Мой опыт", "Проекты", "Контакты"],
+      links: [
+        {
+          title: "Обо мне",
+          link: "about",
+        },
+        {
+          title: "Мой опыт",
+          link: "experience",
+        },
+        {
+          title: "Проекты",
+          link: "projects",
+        },
+        {
+          title: "Контакты",
+          link: "contacts",
+        },
+      ],
       resume: {
         title: "Резюме",
         link: "#",

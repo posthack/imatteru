@@ -1,5 +1,5 @@
 <template>
-  <section class="projects">
+  <section id="projects" class="projects">
     <div class="container">
       <numbered-title :number="3" :title="title" />
       <div class="projects-list">

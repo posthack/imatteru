@@ -1,5 +1,5 @@
 <template>
-  <section class="about">
+  <section id="about" class="about">
     <div class="container">
       <numbered-title :number="1" :title="`About Me`" />
       <div class="about-flex">
