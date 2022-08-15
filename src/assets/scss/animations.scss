@@ -1,3 +1,11 @@
+.anim-fade-in {
+  opacity: 0;
+  transition-duration: 0.2s;
+}
+.loaded .anim-fade-in {
+  opacity: 1;
+}
+
 .anim-fade-down {
   transform: translate(0, -30px);
   opacity: 0;

@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container">
-      Built & Redesigned by Viktor Abakumov. <br />Inspired by
+      Built & Redesigned by Viktor Abakumov <br />Inspired by
       <a href="https://brittanychiang.com/" target="_blank" class="text-link"
         >Brittany Chiang</a
       >

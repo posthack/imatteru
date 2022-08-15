@@ -1,15 +1,29 @@
 <template>
   <section id="contacts" class="contact">
     <div class="container">
-      <div class="contact__label">04. What's Next?</div>
-      <div class="contact__title">Get In Touch</div>
+      <div class="contact__label">04. Чего дальше?</div>
+      <div class="contact__title">Напиши мне</div>
       <div class="contact__desc">
-        Although I’m not currently looking for any new opportunities, my inbox
-        is always open. Whether you have a question or just want to say hi, I’ll
-        try my best to get back to you! Say Hello
+        В настоящий момент я нахожусь в поиске новой работы.<br />Буду рад
+        обсудить любые предложения
       </div>
-      <div class="contact__button">
-        <a href="#" target="_blank">Say Hello</a>
+      <div class="contact__buttons">
+        <div class="contact__buttons-item">
+          <a href="https://t.me/altyncent" target="_blank">Написать в телегу</a>
+          <span class="contact__buttons-label">t.me/altyncent</span>
+        </div>
+        <div class="contact__buttons-item">
+          <a href="mailto:hello@imatte.ru" target="_blank">Написать на почту</a>
+          <span class="contact__buttons-label">hello@imatte.ru</span>
+        </div>
+        <div class="contact__buttons-item">
+          <a
+            href="https://chelyabinsk.hh.ru/resume/dde532e2ff038977c60039ed1f37733557344b"
+            target="_blank"
+            >Посмотреть резюме</a
+          >
+          <span class="contact__buttons-label">hh.ru</span>
+        </div>
       </div>
     </div>
   </section>
@@ -31,7 +45,7 @@ export default {
   text-align: center;
 }
 .container {
-  max-width: 600px;
+  max-width: 1000px;
 }
 .contact__label {
   color: $light-blue;
@@ -49,9 +63,27 @@ export default {
 }
 .contact__desc {
   line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto;
 }
-.contact__button {
+.contact__buttons {
   margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &-label {
+    margin-top: 15px;
+    font-size: 12px;
+    font-family: $font-mono;
+  }
   a {
     display: inline-flex;
     padding: 20px 28px;

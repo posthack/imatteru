@@ -18,9 +18,16 @@
         </div>
         <div class="experience__content">
           <div class="experience__content-title">
-            <a href="#" class="text-link">{{
-              sectionContent.companies[activeTab].name
-            }}</a>
+            <span v-if="sectionContent.companies[activeTab].link.length">
+              Frontend developer @
+              <a
+                :href="sectionContent.companies[activeTab].link"
+                class="text-link"
+                target="_blank"
+                >{{ sectionContent.companies[activeTab].name }}</a
+              >
+            </span>
+            <span v-else>{{ sectionContent.companies[activeTab].name }}</span>
           </div>
           <div class="experience__content-date">
             {{ sectionContent.companies[activeTab].date }}
@@ -30,9 +37,8 @@
               v-for="(el, idx) in sectionContent.companies[activeTab]
                 .responsibilities"
               :key="idx"
-            >
-              {{ el }}
-            </li>
+              v-html="el"
+            ></li>
           </ul>
         </div>
       </div>
@@ -60,47 +66,47 @@ export default {
             name: "Bastion tech",
             date: "Март - Август 2022",
             responsibilities: [
-              "Write modern, performant, maintainable code for a diverse array of client and internal projects",
-              "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify",
-              "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
+              "разработка нового функционала для облачного хранилища с использованием <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue</a>, <a href='https://www.typescriptlang.org/' class='text-link' target='_blank'>TypeScript</a> и <a href='https://vitejs.dev/' class='text-link' target='_blank'>Vite</a>",
+              "написание документации к проекту",
             ],
-            link: "https://google.com",
+            link: "https://bastion-tech.ru/",
           },
           {
             id: 1,
             isSelected: false,
             name: "Algoritmika",
-            date: "January - April 2018",
+            date: "Октябрь 2018 - Март 2022",
             responsibilities: [
-              "Worked with a team of three designers to build a marketing website and e-commerce platform for blistabloc, an ambitious startup originating from Northeastern",
-              "Helped solidify a brand direction for blistabloc that spans both packaging and web",
-              "Interfaced with clients on a weekly basis, providing technological expertise",
+              "разработка внутренней обучающей платформы с использованием <a href='https://reactjs.org/' class='text-link' target='_blank'>React</a>, <a href='https://redux.js.org/' class='text-link' target='_blank'>Redux</a>, <a href='https://styled-components.com/' class='text-link' target='_blank'>Styled components</a>",
+              "разработка сервиса лендингов компании с использованием <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue</a> и <a href='https://nuxtjs.org/' class='text-link' target='_blank'>Nuxt</a>",
+              "переписывание внутреннего дашборда с html/js/jquery на <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue 3</a>",
+              "разработка новых компонентов и функционала на <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue 3</a>",
             ],
-            link: "https://google.com",
+            link: "https://algoritmika.org",
           },
           {
             id: 2,
             isSelected: false,
             name: "Nitka Technologies",
-            date: "January - April 2018",
+            date: "Май 2015 - Октябрь 2018",
             responsibilities: [
-              "Worked with a team of three designers to build a marketing website and e-commerce platform for blistabloc, an ambitious startup originating from Northeastern",
-              "Helped solidify a brand direction for blistabloc that spans both packaging and web",
-              "Interfaced with clients on a weekly basis, providing technological expertise",
+              "разработка посадочных страницы для стартапов иностранных клиентов компании",
+              "использовал html/css/vanilla js/jquery, интегрировал бэк с <a href='https://firebase.google.com/' class='text-link' target='_blank'>Firebase</a>",
+              "был загружен на ~3 дня в неделю",
+              "в остальное время продолжал брать различные заказы на фрилансе",
             ],
-            link: "https://google.com",
+            link: "",
           },
           {
             id: 3,
             isSelected: false,
             name: "Freelance",
-            date: "January - April 2018",
+            date: "Февраль 2010 - Май 2015",
             responsibilities: [
-              "Worked with a team of three designers to build a marketing website and e-commerce platform for blistabloc, an ambitious startup originating from Northeastern",
-              "Helped solidify a brand direction for blistabloc that spans both packaging and web",
-              "Interfaced with clients on a weekly basis, providing technological expertise",
+              "заказы на верстку различной сложности + несложный фронт",
+              "сайты под ключ: верстка + бэкенд на PHP и MySQL",
             ],
-            link: "https://google.com",
+            link: "",
           },
         ],
       },
@@ -155,6 +161,7 @@ export default {
   line-height: 1.3;
   padding-bottom: 8px;
   font-family: $font-sans-calibri;
+  color: $main-text;
 }
 .experience__content-date {
   font-family: $font-mono;

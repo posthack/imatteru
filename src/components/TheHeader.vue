@@ -1,7 +1,13 @@
 <template>
   <header class="header">
     <div class="container">
-      <a href="#">logo</a>
+      <a
+        href="#"
+        class="anim-fade-in"
+        style="transition-delay: 1s; transition-duration: 0.5s"
+      >
+        <TheLogo />
+      </a>
       <div class="header__right">
         <ul class="header-nav">
           <li
@@ -30,8 +36,13 @@
 </template>
 
 <script>
+import TheLogo from "./TheLogo.vue";
+
 export default {
   name: "TheHeader",
+  components: {
+    TheLogo,
+  },
   data() {
     return {
       links: [
