@@ -65,7 +65,7 @@ html {
 body {
   font-family: $font-sans;
   background-color: $main-bg;
-  color: #8892b0;
+  color: $main-text;
   overflow-x: hidden;
   ::selection {
     background-color: lighten($main-bg, 5%);

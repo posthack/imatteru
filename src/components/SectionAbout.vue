@@ -34,9 +34,7 @@
           <div class="about__photo-wrapper">
             <div
               class="about__photo"
-              style="
-                background-image: url('https://avatars.githubusercontent.com/u/2180116?v=4');
-              "
+              style="background-image: url('/images/bruno.png')"
             ></div>
           </div>
         </div>

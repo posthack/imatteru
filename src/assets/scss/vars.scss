@@ -1,20 +1,21 @@
 // #####
 // dark theme
 //
-$light-blue: #64ffda;
-$main-text: #ccd6f6;
-$main-text-dark: #8892b0;
-$main-bg: #0a192f;
-$main-bg-light: #112240;
+// $light-blue: #64ffda;
+// $main-text: #ccd6f6;
+// $main-text-dark: #8892b0;
+// $main-bg: #0a192f;
+// $main-bg-light: #112240;
 
 // #####
 // light theme
 //
-// $light-blue: #3e64ff;
-// $main-text: #202020;
-// $main-text-dark: #000;
-// $main-bg: #fff;
-// $main-bg-light: #fff;
+$light-blue: #3e64ff;
+// $light-blue: rgba(255, 88, 93, 1);
+$main-text: #000;
+$main-text-dark: lighten($main-text, 20%);
+$main-bg: rgba(250, 250, 249, 1);
+$main-bg-light: darken($main-bg, 10%);
 
 // fonts
 $font-mono: "Jetbrains Mono", "Source Code Pro", "Cascadia Code", "SF Mono",

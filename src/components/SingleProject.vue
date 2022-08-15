@@ -91,12 +91,12 @@ export default {
 .single-project__desc {
   padding: 25px;
   border-radius: 4px;
-  background-color: #112240;
+  background-color: #fff;
   color: $main-text-dark;
   line-height: 1.5;
   font-size: 15px;
   font-family: $font-sans-calibri;
-  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.1);
 }
 .single-project__tags {
   display: flex;
@@ -131,7 +131,7 @@ export default {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(darken($light-blue, 50%), 0.2);
+    background-color: rgba($light-blue, 0.1);
     transition: 300ms ease-in-out;
   }
   img {

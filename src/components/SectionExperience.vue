@@ -172,6 +172,7 @@ export default {
   list-style: none;
   padding: 0;
   margin: 0;
+  color: $main-text-dark;
   li {
     font-size: 16px;
     line-height: 1.5;
