@@ -44,9 +44,6 @@ export default {
 </script>
 
 <style lang="scss">
-html {
-  scroll-behavior: smooth;
-}
 ::-webkit-scrollbar {
   width: 6px;
   height: 10px;
@@ -68,7 +65,8 @@ body {
   color: $main-text;
   overflow-x: hidden;
   ::selection {
-    background-color: lighten($main-bg, 5%);
+    background-color: $light-blue;
+    color: #fff;
   }
 }
 .app {

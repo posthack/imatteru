@@ -10,8 +10,6 @@
           :is-right="idx % 2 === 0"
         />
       </div>
-
-      <!-- todo: Other Noteworthy Projects section -->
     </div>
   </section>
 </template>
@@ -28,58 +26,46 @@ export default {
       title: "Несколько моих проектов",
       projects: [
         {
-          label: "Featured Project",
-          title: "Halcyon Theme",
+          label: "Корпоративный проект",
+          title: "Сервис лендингов",
           description:
-            "A minimal, dark blue theme for <a href='#' class='text-link'>VS Code</a>, Sublime Text, <a href='#' class='text-link'>Atom</a>, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
-          tags: ["VS Code", "Sublime Text", "Atom", "iTerm2", "Hyper"],
+            "Сервис лендингов для школы программирования <a href='https://algoritmika.org' target='_blank' class='text-link'>Алгоритмика</a>. Мультиязычность, адаптивность, платежная система.",
+          tags: ["Vue", "Nuxt", "SCSS", "i18n", "Figma"],
           links: [
             {
-              link: "https://github.com",
-              icon: "fab fa-github",
-            },
-            {
-              link: "https://google.com",
-              icon: "fab fa-external-link",
+              link: "https://algoritmika.org",
+              icon: "external",
             },
           ],
-          screenshot: "single-project.png",
+          screenshot: "single-project-01.png",
         },
         {
-          label: "Featured Project",
-          title: "Spotify Profile",
+          label: "Корпоративный проект",
+          title: "Bastion secure cloud",
           description:
-            "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-          tags: ["VS Code", "Sublime Text", "Atom", "iTerm2", "Hyper"],
+            "Облачное хранилище с E2E шифрованием. Доступ к ключам шифрования есть только у отправителя и получателя.",
+          tags: ["Vue 3", "TypeScript", "Vite", "SCSS", "i18n", "Figma"],
           links: [
             {
-              link: "https://github.com",
-              icon: "fab fa-github",
-            },
-            {
-              link: "https://google.com",
-              icon: "fab fa-external-link",
+              link: "https://bsc.bastion-tech.ru/",
+              icon: "external",
             },
           ],
-          screenshot: "single-project.png",
+          screenshot: "single-project-02.png",
         },
         {
           label: "Featured Project",
           title: "Build a Spotify Connected App",
           description:
-            "Unlike tutorials that only cover a few concepts and leave you with half-baked GitHub repositories, this course covers everything from explaining the principles of REST APIs to implementing Spotify's OAuth flow and fetching API data in a React app. By the end of the course, you’ll have an app deployed to the internet you can add to your portfolio.",
-          tags: ["VS Code", "Sublime Text", "Atom", "iTerm2", "Hyper"],
+            "Иностранный интернет магазин одежды с кучей сложных, красивых анимаций.",
+          tags: ["Vanilla JS", "CSS3", "Animations", "Figma"],
           links: [
             {
-              link: "https://github.com",
-              icon: "fab fa-github",
-            },
-            {
-              link: "https://google.com",
-              icon: "fab fa-external-link",
+              link: "https://yelvy.com/",
+              icon: "external",
             },
           ],
-          screenshot: "single-project.png",
+          screenshot: "single-project-03.png",
         },
       ],
     };

@@ -14,10 +14,10 @@
             К настоящему моменту я поработал с более чем 60 клиентами как
             фрилансер, разработал сервис лендингов для школы программирования
             для детей, учавствовал в разработке облачного хранилища файлов,
-            сделал несколько интернет магазинов для своих друзей.
+            сделал несколько интернет магазинов для своих знакомых.
           </p>
           <p>
-            Вот список технологий которые я использую в работе в последнее
+            Вот список технологий, которые я использую в работе в последнее
             время:
           </p>
           <ul class="about__list">
@@ -31,6 +31,7 @@
           </ul>
         </div>
         <div class="about__right">
+          <div class="about__right-label">а это мой щенок Бруно</div>
           <div class="about__photo-wrapper">
             <div
               class="about__photo"
@@ -146,5 +147,10 @@ export default {
   border-radius: 4px;
   filter: grayscale(100%);
   transition: 0.2s ease-in-out;
+}
+.about__right-label {
+  font-size: 12px;
+  font-family: $font-mono;
+  margin-bottom: 12px;
 }
 </style>

@@ -12,9 +12,12 @@
           v-for="(el, idx) in project.links"
           :key="idx"
           :href="el.link"
-          :class="el.icon"
           target="_blank"
-        ></a>
+          class="single-project__links-item"
+        >
+          <icon-github v-if="el.icon === 'github'" />
+          <icon-external v-if="el.icon === 'external'" />
+        </a>
       </div>
     </div>
     <div class="single-project__photo">
@@ -24,8 +27,15 @@
 </template>
 
 <script>
+import IconGithub from "@/assets/icons/IconGithub.vue";
+import IconExternal from "@/assets/icons/IconExternal.vue";
+
 export default {
   name: "SingleProject",
+  components: {
+    IconGithub,
+    IconExternal,
+  },
   props: {
     project: {
       type: Object,
@@ -40,7 +50,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .single-project {
   display: flex;
   height: 350px;
@@ -68,6 +78,15 @@ export default {
     .single-project__photo {
       left: 0;
       right: auto;
+    }
+    .single-project__links {
+      justify-content: flex-end;
+    }
+    .single-project__links-item {
+      &:not(:last-child) {
+        margin-left: 10px;
+        margin-right: 0;
+      }
     }
   }
 }
@@ -97,6 +116,9 @@ export default {
   font-size: 15px;
   font-family: $font-sans-calibri;
   box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.1);
+  a {
+    color: $light-blue;
+  }
 }
 .single-project__tags {
   display: flex;
@@ -113,7 +135,18 @@ export default {
   }
 }
 .single-project__links {
-  a {
+  display: flex;
+  align-items: center;
+}
+.single-project__links-item {
+  display: flex;
+  padding: 10px;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+  svg {
+    width: 22px;
+    height: 22px;
   }
 }
 .single-project__photo {
