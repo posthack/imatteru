@@ -3,12 +3,7 @@
     <div class="container">
       <numbered-title :number="3" :title="title" />
       <div class="projects-list">
-        <single-project
-          v-for="(el, idx) in projects"
-          :key="idx"
-          :project="el"
-          :is-right="idx % 2 === 0"
-        />
+        <single-project v-for="(el, idx) in projects" :key="idx" :project="el" :is-right="idx % 2 === 0" />
       </div>
     </div>
   </section>
@@ -54,8 +49,8 @@ export default {
           screenshot: "single-project-02.png",
         },
         {
-          label: "Featured Project",
-          title: "Build a Spotify Connected App",
+          label: "Корпоративный проект",
+          title: "Интернет магазин одежды",
           description:
             "Иностранный интернет магазин одежды с кучей сложных, красивых анимаций.",
           tags: ["Vanilla JS", "CSS3", "Animations", "Figma"],
@@ -77,6 +72,7 @@ export default {
 .projects {
   padding: 100px 0;
 }
+
 .container {
   max-width: 1000px;
 }
