@@ -74,7 +74,10 @@ const resume = ref({
   display: flex;
   align-items: center;
   font-size: 14px;
-  font-family: $font-mono;
+  font-family: $font-sans;
+  @include _sm {
+    height: 60px;
+  }
 }
 .container {
   display: flex;
@@ -83,9 +86,15 @@ const resume = ref({
   width: 100%;
   padding: 0 50px;
   max-width: 100%;
+  @include _sm {
+    padding: 0 20px;
+  }
 }
 .header-nav {
   display: flex;
+  @include _sm {
+    display: none;
+  }
 }
 .header__right {
   display: flex;
@@ -115,6 +124,10 @@ const resume = ref({
     border: 1px solid $light-blue;
     border-radius: 4px;
     transition: 120ms ease-in-out;
+    @include _sm {
+      font-size: 12px;
+      padding: 10px 14px;
+    }
     &:hover {
       background-color: rgba($light-blue, 0.1);
     }

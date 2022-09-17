@@ -14,7 +14,7 @@
   padding: 25px 0;
   text-align: center;
   color: $main-text-dark;
-  font-family: $font-mono;
+  font-family: $font-sans;
   font-size: 12px;
   line-height: 2;
   .text-link {

@@ -25,13 +25,20 @@ const props = defineProps({
   font-size: 28px;
   color: $main-text;
   font-weight: 600;
+  @include _sm {
+    font-size: 20px;
+  }
   &::before {
     content: attr(data-number);
-    font-family: $font-mono;
+    font-family: $font-sans;
     margin-right: 10px;
     color: $light-blue;
     font-size: 24px;
     font-weight: 400;
+    @include _sm {
+      font-size: 20px;
+      margin-right: 6px;
+    }
   }
 
   &__wrapper {
@@ -47,6 +54,9 @@ const props = defineProps({
       width: 160px;
       height: 1px;
       background-color: $main-text;
+      @include _sm {
+        width: 100px;
+      }
     }
   }
 }

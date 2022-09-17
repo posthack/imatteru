@@ -1,5 +1,5 @@
 <template>
-  <section id="contacts" class="contact">
+  <section id="contacts" class="contact animate-scroll">
     <div class="container">
       <div class="contact__label">04. Чего дальше?</div>
       <div class="contact__title">Напиши мне</div>
@@ -34,15 +34,26 @@
   padding: 100px 0;
   margin-bottom: 100px;
   text-align: center;
+  @include _sm {
+    padding: 40px 0;
+    text-align: left;
+    margin-bottom: 20px;
+  }
 }
 .container {
   max-width: 1000px;
+  @include _sm {
+    padding: 0 20px;
+  }
 }
 .contact__label {
   color: $light-blue;
   margin: 10px 0 20px 0;
-  font-family: $font-mono;
+  font-family: $font-sans;
   font-size: 16px;
+  @include _sm {
+    font-size: 14px;
+  }
 }
 .contact__title {
   font-size: 44px;
@@ -51,29 +62,51 @@
   font-weight: 600;
   margin-bottom: 10px;
   line-height: 66px;
+  @include _sm {
+    text-align: left;
+    font-size: 24px;
+    line-height: 1.3;
+  }
 }
 .contact__desc {
   line-height: 1.5;
   max-width: 500px;
   margin: 0 auto;
+  @include _sm {
+    text-align: left;
+    font-size: 14px;
+  }
 }
 .contact__buttons {
   margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include _sm {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   &-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     &:not(:last-child) {
       margin-right: 20px;
+      @include _sm {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
   }
   &-label {
     margin-top: 15px;
     font-size: 12px;
-    font-family: $font-mono;
+    font-family: $font-sans;
+    @include _sm {
+      margin-top: 5px;
+      text-align: center;
+    }
   }
   a {
     display: inline-flex;
@@ -82,9 +115,13 @@
     border: 1px solid $light-blue;
     border-radius: 4px;
     transition: 120ms ease-in-out;
-    font-family: $font-mono;
+    font-family: $font-sans;
     &:hover {
       background-color: rgba($light-blue, 0.1);
+    }
+    @include _sm {
+      font-size: 12px;
+      padding: 10px 14px;
     }
   }
 }

@@ -16,7 +16,13 @@ const props = defineProps({
 </script>
 
 <template>
-  <div :class="{ 'single-project': true, 'is-right': props.isRight }">
+  <div
+    :class="{
+      'single-project': true,
+      'animate-scroll': true,
+      'is-right': props.isRight,
+    }"
+  >
     <div class="single-project__meta">
       <div class="single-project__label">{{ props.project.label }}</div>
       <div class="single-project__title">{{ props.project.title }}</div>
@@ -52,8 +58,14 @@ const props = defineProps({
   height: 350px;
   align-items: center;
   position: relative;
+  @include _sm {
+    height: auto;
+  }
   &:not(:last-child) {
     margin-bottom: 100px;
+    @include _sm {
+      margin-bottom: 20px;
+    }
   }
   &:hover .single-project__photo::before {
     opacity: 0;
@@ -89,19 +101,25 @@ const props = defineProps({
 .single-project__meta {
   width: 100%;
   max-width: 50%;
+  @include _sm {
+    max-width: 100%;
+  }
 }
 .single-project__label {
   color: $light-blue;
-  font-family: $font-mono;
+  font-family: $font-sans;
   font-size: 12px;
   margin: 10px 0;
 }
 .single-project__title {
-  font-family: $font-sans-calibri;
+  font-family: $font-sans;
   color: $main-text;
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 20px;
+  @include _sm {
+    font-size: 18px;
+  }
 }
 .single-project__desc {
   padding: 25px;
@@ -110,8 +128,12 @@ const props = defineProps({
   color: $main-text-dark;
   line-height: 1.5;
   font-size: 15px;
-  font-family: $font-sans-calibri;
+  font-family: $font-sans;
   box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.1);
+  @include _sm {
+    font-size: 12px;
+    padding: 14px;
+  }
   a {
     color: $light-blue;
   }
@@ -122,11 +144,17 @@ const props = defineProps({
   padding-top: 25px;
   padding-bottom: 10px;
   li {
-    font-family: $font-mono;
+    font-family: $font-sans;
     color: $main-text-dark;
     font-size: 12px;
+    @include _sm {
+      font-size: 10px;
+    }
     &:not(:last-child) {
       margin-right: 20px;
+      @include _sm {
+        margin-right: 10px;
+      }
     }
   }
 }
@@ -153,6 +181,9 @@ const props = defineProps({
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
+  @include _sm {
+    display: none;
+  }
   &::before {
     content: "";
     position: absolute;

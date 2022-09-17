@@ -59,7 +59,7 @@ const sectionContent = ref({
 </script>
 
 <template>
-  <section id="experience" class="experience">
+  <section id="experience" class="experience animate-scroll">
     <div class="container">
       <numbered-title :number="2" :title="sectionContent.title" />
       <div class="experience__wrapper">
@@ -71,7 +71,7 @@ const sectionContent = ref({
               'experience__tabs-item': true,
               _active: el.id === activeTab,
             }"
-            @click="activeTab.value = el.id"
+            @click="activeTab = el.id"
           >
             {{ el.name }}
           </button>
@@ -109,17 +109,30 @@ const sectionContent = ref({
 <style lang="scss" scoped>
 .experience {
   padding: 100px 0;
+  @include _sm {
+    padding: 40px 0;
+  }
 }
 .container {
   max-width: 700px;
+  @include _sm {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
 .experience__wrapper {
   display: flex;
+  @include _sm {
+    flex-direction: column;
+  }
 }
 .experience__tabs {
   width: max-content;
   display: flex;
   flex-direction: column;
+  @include _sm {
+    width: 100%;
+  }
 }
 .experience__tabs-item {
   width: 100%;
@@ -129,7 +142,7 @@ const sectionContent = ref({
   border-left: 2px solid rgba($main-text-dark, 0.3);
   appearance: none;
   background-color: transparent;
-  font-family: $font-mono;
+  font-family: $font-sans;
   color: $main-text-dark;
   border-radius: 0;
   white-space: nowrap;
@@ -146,16 +159,23 @@ const sectionContent = ref({
 .experience__content {
   width: 100%;
   margin-left: 20px;
+  @include _sm {
+    margin-top: 20px;
+    margin-left: 0;
+  }
 }
 .experience__content-title {
   font-size: 18px;
   line-height: 1.3;
   padding-bottom: 8px;
-  font-family: $font-sans-calibri;
+  font-family: $font-sans;
   color: $main-text;
+  @include _sm {
+    font-size: 16px;
+  }
 }
 .experience__content-date {
-  font-family: $font-mono;
+  font-family: $font-sans;
   font-size: 13px;
   margin-bottom: 25px;
 }
@@ -171,6 +191,9 @@ const sectionContent = ref({
     margin-bottom: 10px;
     padding-left: 20px;
     position: relative;
+    @include _sm {
+      font-size: 14px;
+    }
     &::before {
       content: "•";
       position: absolute;

@@ -51,7 +51,7 @@ const projects = ref([
 </script>
 
 <template>
-  <section id="projects" class="projects">
+  <section id="projects" class="projects animate-scroll">
     <div class="container">
       <numbered-title :number="3" :title="title" />
       <div class="projects-list">
@@ -69,9 +69,15 @@ const projects = ref([
 <style lang="scss" scoped>
 .projects {
   padding: 100px 0;
+  @include _sm {
+    padding: 40px 0;
+  }
 }
 
 .container {
   max-width: 1000px;
+  @include _sm {
+    padding: 0 20px;
+  }
 }
 </style>

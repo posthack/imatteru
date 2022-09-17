@@ -62,21 +62,28 @@ const sectionContent = ref({
 .container {
   max-width: 1000px;
   width: 100%;
+  @include _sm {
+    padding: 0 20px;
+  }
 }
 .atm__subtitle {
   font-size: 16px;
   color: $light-blue;
-  font-family: $font-mono;
+  font-family: $font-sans;
   margin: 0 0 30px 4px;
+  @include _sm {
+    font-size: 16px;
+    margin: 0 0 20px 4px;
+  }
 }
 .atm__title {
   font-size: 70px;
   line-height: 1.3;
   color: $main-text;
   font-weight: 600;
-  font-family: $font-sans-calibri;
-  &._dark {
-    color: $main-text-dark;
+  font-family: $font-sans;
+  @include _sm {
+    font-size: 24px;
   }
 }
 .atm__desc {
@@ -85,6 +92,9 @@ const sectionContent = ref({
   font-size: 16px;
   color: $main-text-dark;
   max-width: 540px;
+  @include _sm {
+    max-width: 100%;
+  }
   a {
     color: $light-blue;
   }
@@ -98,7 +108,7 @@ const sectionContent = ref({
     border: 1px solid $light-blue;
     border-radius: 4px;
     transition: 120ms ease-in-out;
-    font-family: $font-mono;
+    font-family: $font-sans;
     &:hover {
       background-color: rgba($light-blue, 0.1);
     }

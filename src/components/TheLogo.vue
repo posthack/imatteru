@@ -9,10 +9,13 @@
   left: 5px;
   font-size: 50px;
   padding: 10px 20px;
-  font-family: $font-mono;
+  font-family: $font-sans;
   text-transform: uppercase;
   color: $main-text;
   font-weight: 700;
+  @include _sm {
+    font-size: 20px;
+  }
   &::before {
     position: absolute;
     content: "";

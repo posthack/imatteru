@@ -10,7 +10,7 @@ const sectionContent = ref({
 
 <template>
   <section id="about" class="about">
-    <div class="container">
+    <div class="container animate-scroll">
       <numbered-title :number="1" :title="sectionContent.title" />
       <div class="about-flex">
         <div class="about__text">
@@ -57,9 +57,16 @@ const sectionContent = ref({
 <style scoped lang="scss">
 .about {
   padding: 100px 0;
+  @include _sm {
+    padding: 40px 0;
+  }
 }
 .container {
   max-width: 900px;
+  @include _sm {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
 .about__text {
   font-size: 16px;
@@ -73,23 +80,33 @@ const sectionContent = ref({
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 50px;
+  @include _sm {
+    display: block;
+  }
 }
 .about__list {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
-  gap: 0px 10px;
-  padding: 0px;
-  margin: 20px 0px 0px;
+  gap: 0 10px;
+  padding: 0;
+  margin: 20px 0 0;
   overflow: hidden;
   list-style: none;
+  @include _sm {
+    margin-top: 40px;
+  }
 }
 .about__list-el {
   font-size: 14px;
-  font-family: $font-mono;
+  font-family: $font-sans;
   font-weight: 400;
   margin-bottom: 10px;
   padding-left: 20px;
   position: relative;
+  @include _sm {
+    font-size: 13px;
+    padding-left: 16px;
+  }
   &::before {
     content: "•";
     position: absolute;
@@ -125,6 +142,11 @@ const sectionContent = ref({
     }
   }
 }
+.about__right {
+  @include _sm {
+    display: none;
+  }
+}
 .about__photo {
   width: 300px;
   height: 300px;
@@ -137,7 +159,7 @@ const sectionContent = ref({
 }
 .about__right-label {
   font-size: 12px;
-  font-family: $font-mono;
+  font-family: $font-sans;
   margin-bottom: 12px;
 }
 </style>
