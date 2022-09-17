@@ -1,5 +1,4 @@
 <script setup>
-// define props
 const props = defineProps({
   number: {
     type: Number,
