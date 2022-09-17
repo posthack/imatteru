@@ -2,15 +2,6 @@
   <div class="logo">va</div>
 </template>
 
-<script>
-export default {
-  name: "TheLogo",
-  data() {
-    return {};
-  },
-};
-</script>
-
 <style scoped lang="scss">
 .logo {
   position: relative;

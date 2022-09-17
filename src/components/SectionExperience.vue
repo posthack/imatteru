@@ -1,3 +1,63 @@
+<script setup>
+import { ref } from "vue";
+import NumberedTitle from "./NumberedTitle.vue";
+
+const activeTab = ref(0);
+const sectionContent = ref({
+  title: "Где я работал",
+  companies: [
+    {
+      id: 0,
+      isSelected: true,
+      name: "Bastion tech",
+      date: "Март - Август 2022",
+      responsibilities: [
+        "разработка нового функционала для облачного хранилища с использованием <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue</a>, <a href='https://www.typescriptlang.org/' class='text-link' target='_blank'>TypeScript</a> и <a href='https://vitejs.dev/' class='text-link' target='_blank'>Vite</a>",
+        "написание документации к проекту",
+      ],
+      link: "https://bastion-tech.ru/",
+    },
+    {
+      id: 1,
+      isSelected: false,
+      name: "Algoritmika",
+      date: "Октябрь 2018 - Март 2022",
+      responsibilities: [
+        "разработка внутренней обучающей платформы с использованием <a href='https://reactjs.org/' class='text-link' target='_blank'>React</a>, <a href='https://redux.js.org/' class='text-link' target='_blank'>Redux</a>, <a href='https://styled-components.com/' class='text-link' target='_blank'>Styled components</a>",
+        "разработка сервиса лендингов компании с использованием <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue</a> и <a href='https://nuxtjs.org/' class='text-link' target='_blank'>Nuxt</a>",
+        "переписывание внутреннего дашборда с html/js/jquery на <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue 3</a>",
+        "разработка новых компонентов и функционала на <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue 3</a>",
+      ],
+      link: "https://algoritmika.org",
+    },
+    {
+      id: 2,
+      isSelected: false,
+      name: "Nitka Technologies",
+      date: "Май 2015 - Октябрь 2018",
+      responsibilities: [
+        "разработка посадочных страницы для стартапов иностранных клиентов компании",
+        "использовал html/css/vanilla js/jquery, интегрировал бэк с <a href='https://firebase.google.com/' class='text-link' target='_blank'>Firebase</a>",
+        "был загружен на ~3 дня в неделю",
+        "в остальное время продолжал брать различные заказы на фрилансе",
+      ],
+      link: "",
+    },
+    {
+      id: 3,
+      isSelected: false,
+      name: "Freelance",
+      date: "Февраль 2010 - Май 2015",
+      responsibilities: [
+        "заказы на верстку различной сложности + несложный фронт",
+        "сайты под ключ: верстка + бэкенд на PHP и MySQL",
+      ],
+      link: "",
+    },
+  ],
+});
+</script>
+
 <template>
   <section id="experience" class="experience">
     <div class="container">
@@ -11,7 +71,7 @@
               'experience__tabs-item': true,
               _active: el.id === activeTab,
             }"
-            @click="activeTab = el.id"
+            @click="activeTab.value = el.id"
           >
             {{ el.name }}
           </button>
@@ -45,75 +105,6 @@
     </div>
   </section>
 </template>
-
-<script>
-import NumberedTitle from "./NumberedTitle.vue";
-
-export default {
-  name: "SectionExperience",
-  components: {
-    NumberedTitle,
-  },
-  data() {
-    return {
-      activeTab: 0,
-      sectionContent: {
-        title: "Где я работал",
-        companies: [
-          {
-            id: 0,
-            isSelected: true,
-            name: "Bastion tech",
-            date: "Март - Август 2022",
-            responsibilities: [
-              "разработка нового функционала для облачного хранилища с использованием <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue</a>, <a href='https://www.typescriptlang.org/' class='text-link' target='_blank'>TypeScript</a> и <a href='https://vitejs.dev/' class='text-link' target='_blank'>Vite</a>",
-              "написание документации к проекту",
-            ],
-            link: "https://bastion-tech.ru/",
-          },
-          {
-            id: 1,
-            isSelected: false,
-            name: "Algoritmika",
-            date: "Октябрь 2018 - Март 2022",
-            responsibilities: [
-              "разработка внутренней обучающей платформы с использованием <a href='https://reactjs.org/' class='text-link' target='_blank'>React</a>, <a href='https://redux.js.org/' class='text-link' target='_blank'>Redux</a>, <a href='https://styled-components.com/' class='text-link' target='_blank'>Styled components</a>",
-              "разработка сервиса лендингов компании с использованием <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue</a> и <a href='https://nuxtjs.org/' class='text-link' target='_blank'>Nuxt</a>",
-              "переписывание внутреннего дашборда с html/js/jquery на <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue 3</a>",
-              "разработка новых компонентов и функционала на <a href='https://vuejs.org/' class='text-link' target='_blank'>Vue 3</a>",
-            ],
-            link: "https://algoritmika.org",
-          },
-          {
-            id: 2,
-            isSelected: false,
-            name: "Nitka Technologies",
-            date: "Май 2015 - Октябрь 2018",
-            responsibilities: [
-              "разработка посадочных страницы для стартапов иностранных клиентов компании",
-              "использовал html/css/vanilla js/jquery, интегрировал бэк с <a href='https://firebase.google.com/' class='text-link' target='_blank'>Firebase</a>",
-              "был загружен на ~3 дня в неделю",
-              "в остальное время продолжал брать различные заказы на фрилансе",
-            ],
-            link: "",
-          },
-          {
-            id: 3,
-            isSelected: false,
-            name: "Freelance",
-            date: "Февраль 2010 - Май 2015",
-            responsibilities: [
-              "заказы на верстку различной сложности + несложный фронт",
-              "сайты под ключ: верстка + бэкенд на PHP и MySQL",
-            ],
-            link: "",
-          },
-        ],
-      },
-    };
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 .experience {

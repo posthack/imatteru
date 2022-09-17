@@ -1,15 +1,35 @@
+<script setup>
+import IconGithub from "@/assets/icons/IconGithub.vue";
+import IconExternal from "@/assets/icons/IconExternal.vue";
+
+const props = defineProps({
+  project: {
+    type: Object,
+    required: true,
+  },
+  isRight: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+});
+</script>
+
 <template>
-  <div :class="{ 'single-project': true, 'is-right': isRight }">
+  <div :class="{ 'single-project': true, 'is-right': props.isRight }">
     <div class="single-project__meta">
-      <div class="single-project__label">{{ project.label }}</div>
-      <div class="single-project__title">{{ project.title }}</div>
-      <div class="single-project__desc" v-html="project.description"></div>
+      <div class="single-project__label">{{ props.project.label }}</div>
+      <div class="single-project__title">{{ props.project.title }}</div>
+      <div
+        class="single-project__desc"
+        v-html="props.project.description"
+      ></div>
       <ul class="single-project__tags">
-        <li v-for="(el, idx) in project.tags" :key="idx">{{ el }}</li>
+        <li v-for="(el, idx) in props.project.tags" :key="idx">{{ el }}</li>
       </ul>
       <div class="single-project__links">
         <a
-          v-for="(el, idx) in project.links"
+          v-for="(el, idx) in props.project.links"
           :key="idx"
           :href="el.link"
           target="_blank"
@@ -21,34 +41,10 @@
       </div>
     </div>
     <div class="single-project__photo">
-      <img :src="`images/${project.screenshot}`" alt="" />
+      <img :src="`images/${props.project.screenshot}`" alt="" />
     </div>
   </div>
 </template>
-
-<script>
-import IconGithub from "@/assets/icons/IconGithub.vue";
-import IconExternal from "@/assets/icons/IconExternal.vue";
-
-export default {
-  name: "SingleProject",
-  components: {
-    IconGithub,
-    IconExternal,
-  },
-  props: {
-    project: {
-      type: Object,
-      required: true,
-    },
-    isRight: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-  },
-};
-</script>
 
 <style lang="scss">
 .single-project {

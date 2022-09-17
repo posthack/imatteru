@@ -1,3 +1,32 @@
+<script setup>
+import { ref } from "vue";
+import TheLogo from "./TheLogo.vue";
+
+const links = ref([
+  {
+    title: "Обо мне",
+    link: "about",
+  },
+  {
+    title: "Мой опыт",
+    link: "experience",
+  },
+  {
+    title: "Проекты",
+    link: "projects",
+  },
+  {
+    title: "Контакты",
+    link: "contacts",
+  },
+]);
+
+const resume = ref({
+  title: "Резюме",
+  link: "#",
+});
+</script>
+
 <template>
   <header class="header">
     <div class="container">
@@ -34,43 +63,6 @@
     </div>
   </header>
 </template>
-
-<script>
-import TheLogo from "./TheLogo.vue";
-
-export default {
-  name: "TheHeader",
-  components: {
-    TheLogo,
-  },
-  data() {
-    return {
-      links: [
-        {
-          title: "Обо мне",
-          link: "about",
-        },
-        {
-          title: "Мой опыт",
-          link: "experience",
-        },
-        {
-          title: "Проекты",
-          link: "projects",
-        },
-        {
-          title: "Контакты",
-          link: "contacts",
-        },
-      ],
-      resume: {
-        title: "Резюме",
-        link: "#",
-      },
-    };
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 .header {

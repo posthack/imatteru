@@ -29,15 +29,6 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "SectionContact",
-  data() {
-    return {};
-  },
-};
-</script>
-
 <style lang="scss" scoped>
 .contact {
   padding: 100px 0;

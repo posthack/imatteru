@@ -1,7 +1,17 @@
+<script setup>
+import { ref } from "vue";
+import NumberedTitle from "./NumberedTitle.vue";
+
+const sectionContent = ref({
+  skills: ["JavaScript (ES6+)", "TypeScript", "Vue", "Nuxt", "Vite", "Node.js"],
+  title: "Обо мне",
+});
+</script>
+
 <template>
   <section id="about" class="about">
     <div class="container">
-      <numbered-title :number="1" :title="`Обо мне`" />
+      <numbered-title :number="1" :title="sectionContent.title" />
       <div class="about-flex">
         <div class="about__text">
           <p>
@@ -43,29 +53,6 @@
     </div>
   </section>
 </template>
-
-<script>
-import NumberedTitle from "./NumberedTitle.vue";
-
-export default {
-  name: "SectionAbout",
-  components: { NumberedTitle },
-  data() {
-    return {
-      sectionContent: {
-        skills: [
-          "JavaScript (ES6+)",
-          "TypeScript",
-          "Vue",
-          "Nuxt",
-          "Vite",
-          "Node.js",
-        ],
-      },
-    };
-  },
-};
-</script>
 
 <style scoped lang="scss">
 .about {

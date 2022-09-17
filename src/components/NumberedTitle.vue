@@ -1,26 +1,24 @@
+<script setup>
+// define props
+const props = defineProps({
+  number: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
+  title: {
+    type: String,
+    required: true,
+    default: "",
+  },
+});
+</script>
+
 <template>
-  <h2 class="numbered-title" :data-number="`0${number}.`">
-    <div class="numbered-title__wrapper">{{ title }}</div>
+  <h2 class="numbered-title" :data-number="`0${props.number}.`">
+    <div class="numbered-title__wrapper">{{ props.title }}</div>
   </h2>
 </template>
-
-<script>
-export default {
-  name: "NumberedTitle",
-  props: {
-    number: {
-      type: Number,
-      required: false,
-      default: 0,
-    },
-    title: {
-      type: String,
-      required: true,
-      default: "",
-    },
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 .numbered-title {

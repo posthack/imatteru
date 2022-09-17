@@ -9,10 +9,6 @@
   </footer>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 .footer {
   padding: 25px 0;

@@ -1,3 +1,18 @@
+<script setup>
+import { ref } from "vue";
+
+const sectionContent = ref({
+  subtitle: "Привет, меня зовут",
+  firstTitle: "Абакумов Виктор.",
+  secondTitle: "Я делаю фронт для сайтов.",
+  desc: "Frontend разработчик с 12-летним стажем. Последние 4 года занимаюсь корпоративной разработкой проектов на <a href='https://vuejs.org/' class='text-link' target='_blank'>VueJS</a>. В настоящее время нахожусь в поиске новой работы.",
+  button: {
+    text: "Найми меня",
+    link: "#contacts",
+  },
+});
+</script>
+
 <template>
   <section class="atm">
     <div class="container">
@@ -35,26 +50,6 @@
     </div>
   </section>
 </template>
-
-<script>
-export default {
-  name: "SectionAtm",
-  data() {
-    return {
-      sectionContent: {
-        subtitle: "Привет, меня зовут",
-        firstTitle: "Абакумов Виктор.",
-        secondTitle: "Я делаю фронт для сайтов.",
-        desc: "Frontend разработчик с 12-летним стажем. Последние 4 года занимаюсь корпоративной разработкой проектов на <a href='https://vuejs.org/' class='text-link' target='_blank'>VueJS</a>. В настоящее время нахожусь в поиске новой работы.",
-        button: {
-          text: "Найми меня",
-          link: "#contacts",
-        },
-      },
-    };
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 .atm {
