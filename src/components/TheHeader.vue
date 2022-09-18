@@ -23,7 +23,7 @@ const links = ref([
 
 const resume = ref({
   title: "Резюме",
-  link: "#",
+  link: "https://chelyabinsk.hh.ru/resume/dde532e2ff038977c60039ed1f37733557344b",
 });
 </script>
 
